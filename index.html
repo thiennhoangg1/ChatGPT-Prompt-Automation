@@ -7,21 +7,26 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #ffffcc; /* light yellow */
             margin: 0;
             padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            height: 100vh; /* Set full height */
+            justify-content: center; /* Center content vertically */
         }
         h1 {
             color: #333;
         }
         .button-container {
             margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap; /* Allow buttons to wrap */
+            justify-content: center; /* Center buttons horizontally */
         }
         button {
-            background-color: #008cba;
+            background-color: #004080; /* dark blue */
             color: white;
             border: none;
             padding: 15px 30px;
@@ -35,7 +40,7 @@
             transition: background-color 0.3s ease;
         }
         button:hover {
-            background-color: #005f5f;
+            background-color: #00264d; /* darker blue on hover */
         }
     </style>
 </head>
@@ -45,6 +50,12 @@
         <button onclick="openChatGPTWithPrompt(prompt1)">Healthcare Providers</button>
         <button onclick="openChatGPTWithPrompt(prompt2)">Nutrition Guide</button>
         <button onclick="openChatGPTWithPrompt(prompt3)">Exercise Plan</button>
+        <button onclick="openChatGPTWithPrompt(prompt4)">Prompt 4</button>
+        <button onclick="openChatGPTWithPrompt(prompt5)">Prompt 5</button>
+        <button onclick="openChatGPTWithPrompt(prompt6)">Prompt 6</button>
+        <button onclick="openChatGPTWithPrompt(prompt7)">Prompt 7</button>
+        <button onclick="openChatGPTWithPrompt(prompt8)">Prompt 8</button>
+        <button onclick="openChatGPTWithPrompt(prompt9)">Prompt 9</button>
     </div>
 
     <script>
@@ -52,11 +63,17 @@
         const prompt1 = `Explain the role of healthcare providers in the pharmaceutical industry.`;
         const prompt2 = `Create a healthy meal plan for a vegan diet.`;
         const prompt3 = `Design a beginner exercise plan for general fitness.`;
+        const prompt4 = `Prompt 4`;
+        const prompt5 = `Prompt 5`;
+        const prompt6 = `Prompt 6`;
+        const prompt7 = `Prompt 7`;
+        const prompt8 = `Prompt 8`;
+        const prompt9 = `Prompt 9`;
 
         // Function to open ChatGPT and pre-fill the selected prompt
         function openChatGPTWithPrompt(prompt) {
             const encodedPrompt = encodeURIComponent(prompt);
-            const chatGPTURL = `https://chat.openai.com/?q=${encodedPrompt}`;
+            const chatGPTURL = `https://chat.openai.com/?model=gpt-3.5&q=${encodedPrompt}`;
             window.open(chatGPTURL, '_blank');
         }
     </script>
