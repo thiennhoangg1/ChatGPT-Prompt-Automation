@@ -3,60 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatGPT Prompt Selector</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #ffffcc; /* light yellow */
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 100vh; /* Set full height */
-            justify-content: center; /* Center content vertically */
-        }
-        h1 {
-            color: #333;
-        }
-        .button-container {
-            margin-top: 20px;
-            display: flex;
-            flex-wrap: wrap; /* Allow buttons to wrap */
-            justify-content: center; /* Center buttons horizontally */
-        }
-        button {
-            background-color: #004080; /* dark blue */
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 10px 5px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        button:hover {
-            background-color: #00264d; /* darker blue on hover */
-        }
-    </style>
+    <title>JunGPT Prompt Selector</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Select a ChatGPT Prompt</h1>
-    <div class="button-container">
-        <button onclick="openChatGPTWithPrompt(prompt1)">Healthcare Providers</button>
-        <button onclick="openChatGPTWithPrompt(prompt2)">Nutrition Guide</button>
-        <button onclick="openChatGPTWithPrompt(prompt3)">Exercise Plan</button>
-        <button onclick="openChatGPTWithPrompt(prompt4)">Prompt 4</button>
-        <button onclick="openChatGPTWithPrompt(prompt5)">Prompt 5</button>
-        <button onclick="openChatGPTWithPrompt(prompt6)">Prompt 6</button>
-        <button onclick="openChatGPTWithPrompt(prompt7)">Prompt 7</button>
-        <button onclick="openChatGPTWithPrompt(prompt8)">Prompt 8</button>
-        <button onclick="openChatGPTWithPrompt(prompt9)">Prompt 9</button>
-    </div>
+    <nav>
+        <div class="logo">
+            <img src="./cchc.jfif" alt="logo" class="nav-logo">
+            Cobbs Creek Healthcare
+        </div>
+        <div class="nav-items">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="mailto:cchc@cchc.com">Contact</a>
+        </div>
+    </nav>
+    <section class="hero">
+        <div class="hero-container">
+            <div class="column-left">
+                <h1>JunGPT Prompts for CCHC use</h1>
+                <p>Choose a topic to get started!</p>
+                <div class="button-container">
+                    <button onclick="openChatGPTWithPrompt(prompt1)">Healthcare Providers</button>
+                    <button onclick="openChatGPTWithPrompt(prompt2)">Nutrition Guide</button>
+                    <button onclick="openChatGPTWithPrompt(prompt3)">Exercise Plan</button>
+                    <button onclick="openChatGPTWithPrompt(prompt4)">Prompt 4</button>
+                    <button onclick="openChatGPTWithPrompt(prompt5)">Prompt 5</button>
+                    <button onclick="openChatGPTWithPrompt(prompt6)">Prompt 6</button>
+                    <button onclick="openChatGPTWithPrompt(prompt7)">Prompt 7</button>
+                    <button onclick="openChatGPTWithPrompt(prompt8)">Prompt 8</button>
+                    <button onclick="openChatGPTWithPrompt(prompt9)">Prompt 9</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script>
         // Define multiple prompts with short messages for testing
