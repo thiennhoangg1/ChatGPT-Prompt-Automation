@@ -23,16 +23,38 @@
             <div class="column-left">
                 <h1>JunGPT Prompts for CCHC use</h1>
                 <p>Choose a topic to get started!</p>
+                <div class="dropdown">
+                    <label for="chatgpt-version">Select ChatGPT Version:</label>
+                    <select id="chatgpt-version">
+                        <option value="gpt-3.5">GPT-3.5</option>
+                        <option value="gpt-4.0">GPT-4.0</option>
+                    </select>
+                </div>
                 <div class="button-container">
-                    <button onclick="openChatGPTWithPrompt(prompt1)">Healthcare Providers</button>
-                    <button onclick="openChatGPTWithPrompt(prompt2)">Nutrition Guide</button>
-                    <button onclick="openChatGPTWithPrompt(prompt3)">Exercise Plan</button>
-                    <button onclick="openChatGPTWithPrompt(prompt4)">Prompt 4</button>
-                    <button onclick="openChatGPTWithPrompt(prompt5)">Prompt 5</button>
-                    <button onclick="openChatGPTWithPrompt(prompt6)">Prompt 6</button>
-                    <button onclick="openChatGPTWithPrompt(prompt7)">Prompt 7</button>
-                    <button onclick="openChatGPTWithPrompt(prompt8)">Prompt 8</button>
-                    <button onclick="openChatGPTWithPrompt(prompt9)">Prompt 9</button>
+                    <div class="column">
+                        <h2>Week 1</h2>
+                        <button onclick="openChatGPTWithPrompt(prompt1)">Day 1</button>
+                        <button onclick="openChatGPTWithPrompt(prompt2)">Day 2</button>
+                        <button onclick="openChatGPTWithPrompt(prompt3)">Day 3</button>
+                        <button onclick="openChatGPTWithPrompt(prompt4)">Day 4</button>
+                        <button onclick="openChatGPTWithPrompt(prompt5)">Day 5</button>
+                    </div>
+                    <div class="column">
+                        <h2>Week 2</h2>
+                        <button onclick="openChatGPTWithPrompt(prompt6)">Day 1</button>
+                        <button onclick="openChatGPTWithPrompt(prompt7)">Day 2</button>
+                        <button onclick="openChatGPTWithPrompt(prompt8)">Day 3</button>
+                        <button onclick="openChatGPTWithPrompt(prompt9)">Day 4</button>
+                        <button onclick="openChatGPTWithPrompt(prompt10)">Day 5</button>
+                    </div>
+                    <div class="column">
+                        <h2>Week 3</h2>
+                        <button onclick="openChatGPTWithPrompt(prompt11)">Day 1</button>
+                        <button onclick="openChatGPTWithPrompt(prompt12)">Day 2</button>
+                        <button onclick="openChatGPTWithPrompt(prompt13)">Day 3</button>
+                        <button onclick="openChatGPTWithPrompt(prompt14)">Day 4</button>
+                        <button onclick="openChatGPTWithPrompt(prompt15)">Day 5</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -49,11 +71,18 @@
         const prompt7 = `Prompt 7`;
         const prompt8 = `Prompt 8`;
         const prompt9 = `Prompt 9`;
+        const prompt10 = `Prompt 10`;
+        const prompt11 = `Prompt 11`;
+        const prompt12 = `Prompt 12`;
+        const prompt13 = `Prompt 13`;
+        const prompt14 = `Prompt 14`;
+        const prompt15 = `Prompt 15`;
 
         // Function to open ChatGPT and pre-fill the selected prompt
         function openChatGPTWithPrompt(prompt) {
+            const version = document.getElementById('chatgpt-version').value;
             const encodedPrompt = encodeURIComponent(prompt);
-            const chatGPTURL = `https://chat.openai.com/?model=gpt-3.5&q=${encodedPrompt}`;
+            const chatGPTURL = `https://chat.openai.com/?model=${version}&q=${encodedPrompt}`;
             window.open(chatGPTURL, '_blank');
         }
     </script>

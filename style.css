@@ -1,10 +1,10 @@
 body {
-    background-color: #FFFFE0; /* light yellow */
-    font-family: 'Roboto', sans-serif; /* Changed font */
+    background-color: #0059b3; 
+    font-family: 'Roboto', sans-serif;
 }
 
 nav {
-    background-color: #004080; /* dark blue */
+    background-color: #004080; 
     padding: 0rem calc((100vw - 1300px) / 2);
     display: flex;
     align-items: center;
@@ -13,8 +13,8 @@ nav {
 }
 
 .logo {
-    color: #FFE066; /* light yellow */
-    font-size: 1rem;
+    color: #FFE066; 
+    font-size: 2rem;
     font-weight: bold;
     font-style: italic;
     padding: 0 2rem;
@@ -23,29 +23,30 @@ nav {
 }
 
 .nav-logo {
-    width: 40px; /* Adjust size as needed */
+    width: 60px; 
     height: auto;
     margin-right: 10px;
 }
 
 nav a {
     text-decoration: underline;
-    color: #FFE066; /* light yellow */
+    color: #FFE066; 
     padding: 0 1.5rem;
 }
 
 nav a:hover {
-    color: #FFFFFF; /* white */
+    color: #FFFFFF; 
 }
 
 .hero {
-    background: #0059b3; /* medium blue */
-    padding-top: 20px; /* Add padding to bring the hero section down a bit */
+    background: #0059b3; 
+    padding-top: 20px; 
 }
 
 .hero-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     height: 95vh;
     padding: 0rem calc((100vw - 1300px) / 2);
 }
@@ -53,32 +54,40 @@ nav a:hover {
 .column-left {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Align items to the start (top) */
-    align-items: flex-start;
-    color: #FFE066; /* light yellow */
+    align-items: center; 
+    color: #FFE066; 
     padding: 2rem 2rem;
-}
+    text-align: center; 
 
 .column-left h1 {
     margin-bottom: 1rem;
-    font-size: 2.5rem; /* Increase font size slightly */
+    font-size: 2.5rem;
 }
 
 .column-left p {
     margin-bottom: 1.5rem;
-    font-size: 1.5rem; /* Increase font size slightly */
+    font-size: 1.5rem; 
     line-height: 1.5;
+}
+
+.dropdown {
+    margin-bottom: 1.5rem;
 }
 
 .button-container {
     display: flex;
-    flex-wrap: wrap; /* Allow buttons to wrap */
-    gap: 10px; /* Add gap between buttons */
-    justify-content: flex-start; /* Align buttons to the start (top) */
+    justify-content: center;
+    gap: 20px; 
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
 }
 
 button {
-    background-color: #004080; /* dark blue */
+    background-color: #004080; 
     color: white;
     border: none;
     padding: 10px 20px;
@@ -108,7 +117,9 @@ button:hover {
 }
 
 @media screen and (max-width: 768px) {
-    .hero-container {
-        grid-template-columns: 1fr;
+    .button-container {
+        flex-direction: column;
+        align-items: center;
     }
+}
 }
