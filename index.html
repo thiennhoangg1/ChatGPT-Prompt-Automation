@@ -56,7 +56,7 @@
         // Function to open ChatGPT and pre-fill the selected prompt
         function openChatGPTWithPrompt(prompt) {
             const encodedPrompt = encodeURIComponent(prompt);
-            const chatGPTURL = `https://chat.openai.com/?prompt=${encodedPrompt}`;
+            const chatGPTURL = `https://chat.openai.com/?q=${encodedPrompt}`;
             window.open(chatGPTURL, '_blank');
         }
     </script>
