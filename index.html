@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ChatGPT Prompt</title>
+</head>
+<body>
+    <script>
+        // Define the prompt
+        const prompt = `
+        Research and provide a detailed and thorough explanation of the topic "Healthcare Providers" in the context of the pharmaceutical industry. Be specific and use high lexical density. Please include:
+
+        1. Introductory Summary: 
+            - Provide a concise introductory summary of the topic.
+            - Define healthcare providers and outline their roles in the pharmaceutical industry.
+
+        2. Significance in the Pharmaceutical Landscape:
+            - Explain why healthcare providers are significant in the pharmaceutical landscape.
+            - Describe their impact on pharmaceutical sales, patient outcomes, and market dynamics.
+            - Discuss how healthcare providers influence business operations and strategic decisions within pharmaceutical companies.
+
+        3. Business Relationships and Interactions:
+            - Detail the nature of relationships between healthcare providers and pharmaceutical companies.
+            - Include examples of direct engagement, clinical trials, and advisory roles.
+            - Discuss ethical considerations and regulations governing these interactions.
+
+        4. Pharmaceutical Marketing Analytics:
+            - Explain how healthcare providers are integrated into pharmaceutical marketing analytics.
+            - Discuss the sources of data used to analyze healthcare provider behavior (e.g., EHRs, prescription databases, medical claims data).
+            - Describe methods for analyzing this data, such as machine learning and data mining techniques.
+            - Identify marketing channels used to reach healthcare providers, including traditional and digital methods.
+            - Explain performance metrics and financial considerations involved in marketing to healthcare providers.
+
+        5. Current Events:
+            - Provide information on recent developments that impact healthcare providers and the pharmaceutical industry.
+            - Include topics such as telehealth adoption, regulatory changes, and technological advancements (e.g., AI in healthcare).
+            - Use credible sources for this section and summarize the key points.
+
+        6. Credible Sources and Further Reading:
+            - Include a list of credible sources and links for further reading from academic journals, government agencies, industry reports, professional associations, and reputable news outlets.
+            - For each source, provide a brief sentence about its relevance and the type of information it offers.
+            - Prioritize the most current information available, especially if it relates to a company or product.
+
+        7. Additional Questions for Further Research:
+            - What are the key challenges healthcare providers face when interacting with pharmaceutical companies?
+            - How do regional differences affect healthcare providers' roles in the pharmaceutical industry?
+            - What are the best practices for pharmaceutical companies to ensure ethical and effective engagement with healthcare providers?
+            - How do healthcare providers' prescribing habits change in response to new drug launches and medical advancements?
+            - What are the long-term trends in healthcare provider-pharmaceutical company relationships?
+
+        8. Organizational Structure:
+            - Organize the information into tables and use visual aids where appropriate.
+            - Ensure the tables are informative and do not merely repeat the text information.
+            - Use headings, bullet points, and other formatting techniques to enhance readability and visual appeal.
+
+        Conclusion
+
+        Conclude with a summary that ties together the significance of healthcare providers in the pharmaceutical industry, the importance of ethical business practices, and the future trends that may shape these relationships.
+        `;
+
+        // Function to open ChatGPT and pre-fill the prompt
+        function openChatGPTWithPrompt() {
+            const chatGPTURL = `https://chat.openai.com/?prompt=${encodeURIComponent(prompt)}`;
+            window.location.href = chatGPTURL;
+        }
+
+        // Execute the function
+        openChatGPTWithPrompt();
+    </script>
+</body>
+</html>
