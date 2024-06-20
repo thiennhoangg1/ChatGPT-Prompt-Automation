@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ChatGPT Prompt Selector</title>
+</head>
+<body>
+    <h1>Select a ChatGPT Prompt</h1>
+    <button onclick="openChatGPTWithPrompt(prompt1)">Healthcare Providers</button>
+    <button onclick="openChatGPTWithPrompt(prompt2)">Nutrition Guide</button>
+    <button onclick="openChatGPTWithPrompt(prompt3)">Exercise Plan</button>
+
+    <script>
+        // Define multiple prompts
+        const prompt1 = `
+        Research and provide a detailed and thorough explanation of the topic "Healthcare Providers" in the context of the pharmaceutical industry. Be specific and use high lexical density. Please include:
+        ...
+        `;
+
+        const prompt2 = `
+        You are an expert in nutrition and healthy eating habits. Your mission is to create a comprehensive guide on how to make healthy meal plans that cater to different dietary needs and preferences. Your guide should include step-by-step instructions, sample meal plans, and a list of foods to include and avoid for each diet.
+        ...
+        `;
+
+        const prompt3 = `
+        You are an expert fitness trainer. Your task is to design a comprehensive exercise plan for individuals of various fitness levels. The plan should include warm-ups, cardio, strength training, and cool-down exercises, along with tips for maintaining motivation and consistency.
+        ...
+        `;
+
+        // Function to open ChatGPT and pre-fill the selected prompt
+        function openChatGPTWithPrompt(prompt) {
+            const chatGPTURL = `https://chat.openai.com/?prompt=${encodeURIComponent(prompt)}`;
+            window.location.href = chatGPTURL;
+        }
+    </script>
+</body>
+</html>
