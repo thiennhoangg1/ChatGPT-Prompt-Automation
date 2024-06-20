@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 2 Subbuttons</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="./cchc.jfif" alt="logo" class="nav-logo">
+            Cobbs Creek Healthcare
+        </div>
+        <div class="nav-items">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="mailto:cchc@cchc.com">Contact</a>
+        </div>
+    </nav>
+    <section class="hero">
+        <div class="hero-container">
+            <div class="dropdown">
+                <label for="chatgpt-version">Select ChatGPT Version:</label>
+                <select id="chatgpt-version">
+                    <option value="gpt-3.5">GPT-3.5</option>
+                    <option value="gpt-4.0">GPT-4.0</option>
+                </select>
+            </div>
+            <div class="button-container">
+                <button onclick="openChatGPTWithPrompt(prompt1)">Day 1</button>
+                <button onclick="openChatGPTWithPrompt(prompt2)">Day 2</button>
+                <button onclick="openChatGPTWithPrompt(prompt3)">Day 3</button>
+                <button onclick="openChatGPTWithPrompt(prompt4)">Day 4</button>
+                <button onclick="openChatGPTWithPrompt(prompt5)">Day 5</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const prompt1 = "Week 2, Day 1 prompt";
+        const prompt2 = "Week 2, Day 2 prompt";
+        const prompt3 = "Week 2, Day 3 prompt";
+        const prompt4 = "Week 2, Day 4 prompt";
+        const prompt5 = "Week 2, Day 5 prompt";
+
+        function openChatGPTWithPrompt(prompt) {
+            const version = document.getElementById('chatgpt-version').value;
+            const encodedPrompt = encodeURIComponent(prompt);
+            const chatGPTURL = `https://chat.openai.com/?model=${version}&q=${encodedPrompt}`;
+            window.open(chatGPTURL, '_blank');
+        }
+    </script>
+</body>
+</html>

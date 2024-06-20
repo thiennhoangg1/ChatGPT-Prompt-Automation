@@ -5,6 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JunGPT Prompt Selector</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+        }
+        .button-container a {
+            display: block;
+            width: 30%;
+            padding: 20px;
+            text-align: center;
+            background-color: #004080;
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .button-container a:hover {
+            background-color: #00264d;
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -23,68 +44,13 @@
             <div class="column-left">
                 <h1>JunGPT Prompts for CCHC use</h1>
                 <p>Choose a topic to get started!</p>
-                <div class="dropdown">
-                    <label for="chatgpt-version">Select ChatGPT Version:</label>
-                    <select id="chatgpt-version">
-                        <option value="gpt-3.5">GPT-3.5</option>
-                        <option value="gpt-4.0">GPT-4.0</option>
-                    </select>
-                </div>
                 <div class="button-container">
-                    <div class="column">
-                        <h2>Week 1</h2>
-                        <button onclick="openChatGPTWithPrompt(prompt1)">Day 1</button>
-                        <button onclick="openChatGPTWithPrompt(prompt2)">Day 2</button>
-                        <button onclick="openChatGPTWithPrompt(prompt3)">Day 3</button>
-                        <button onclick="openChatGPTWithPrompt(prompt4)">Day 4</button>
-                        <button onclick="openChatGPTWithPrompt(prompt5)">Day 5</button>
-                    </div>
-                    <div class="column">
-                        <h2>Week 2</h2>
-                        <button onclick="openChatGPTWithPrompt(prompt6)">Day 1</button>
-                        <button onclick="openChatGPTWithPrompt(prompt7)">Day 2</button>
-                        <button onclick="openChatGPTWithPrompt(prompt8)">Day 3</button>
-                        <button onclick="openChatGPTWithPrompt(prompt9)">Day 4</button>
-                        <button onclick="openChatGPTWithPrompt(prompt10)">Day 5</button>
-                    </div>
-                    <div class="column">
-                        <h2>Week 3</h2>
-                        <button onclick="openChatGPTWithPrompt(prompt11)">Day 1</button>
-                        <button onclick="openChatGPTWithPrompt(prompt12)">Day 2</button>
-                        <button onclick="openChatGPTWithPrompt(prompt13)">Day 3</button>
-                        <button onclick="openChatGPTWithPrompt(prompt14)">Day 4</button>
-                        <button onclick="openChatGPTWithPrompt(prompt15)">Day 5</button>
-                    </div>
+                    <a href="week1button.html">Week 1</a>
+                    <a href="week2button.html">Week 2</a>
+                    <a href="week3button.html">Week 3</a>
                 </div>
             </div>
         </div>
     </section>
-
-    <script>
-        // Define multiple prompts with short messages for testing
-        const prompt1 = `Prompt 1`;
-        const prompt2 = `Prompt 2`;
-        const prompt3 = `Prompt 3`;
-        const prompt4 = `Prompt 4`;
-        const prompt5 = `Prompt 5`;
-        const prompt6 = `Prompt 6`;
-        const prompt7 = `Prompt 7`;
-        const prompt8 = `Prompt 8`;
-        const prompt9 = `Prompt 9`;
-        const prompt10 = `Prompt 10`;
-        const prompt11 = `Prompt 11`;
-        const prompt12 = `Prompt 12`;
-        const prompt13 = `Prompt 13`;
-        const prompt14 = `Prompt 14`;
-        const prompt15 = `Prompt 15`;
-
-        // Function to open ChatGPT and pre-fill the selected prompt
-        function openChatGPTWithPrompt(prompt) {
-            const version = document.getElementById('chatgpt-version').value;
-            const encodedPrompt = encodeURIComponent(prompt);
-            const chatGPTURL = `https://chat.openai.com/?model=${version}&q=${encodedPrompt}`;
-            window.open(chatGPTURL, '_blank');
-        }
-    </script>
 </body>
 </html>
