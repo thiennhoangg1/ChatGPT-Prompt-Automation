@@ -17,22 +17,27 @@
             <a href="about.html">About</a>
             <a href="mailto:cchc@cchc.com">Contact</a>
         </div>
+        <div class="dropdown">
+            <label for="chatgpt-version">JunGPT Version:</label>
+            <select id="chatgpt-version">
+                <option value="gpt-3.5">GPT-3.5</option>
+                <option value="gpt-4.0">GPT-4.0</option>
+            </select>
+        </div>
     </nav>
+
     <section class="hero">
         <div class="hero-container">
-            <div class="dropdown">
-                <label for="chatgpt-version">Select ChatGPT Version:</label>
-                <select id="chatgpt-version">
-                    <option value="gpt-3.5">GPT-3.5</option>
-                    <option value="gpt-4.0">GPT-4.0</option>
-                </select>
-            </div>
-            <div class="button-container">
-                <button onclick="openChatGPTWithPrompt(prompt1)">Day 1</button>
-                <button onclick="openChatGPTWithPrompt(prompt2)">Day 2</button>
-                <button onclick="openChatGPTWithPrompt(prompt3)">Day 3</button>
-                <button onclick="openChatGPTWithPrompt(prompt4)">Day 4</button>
-                <button onclick="openChatGPTWithPrompt(prompt5)">Day 5</button>
+            <div class="column-left">
+                <h1>JunGPT Prompts for CCHC Use</h1>
+                <p>Choose a topic to get started!</p>
+                <div class="button-container">
+                    <a href="#" onclick="openChatGPTWithPrompt(prompt1)">Day 1</a>
+                    <a href="#" onclick="openChatGPTWithPrompt(prompt2)">Day 2</a>
+                    <a href="#" onclick="openChatGPTWithPrompt(prompt3)">Day 3</a>
+                    <a href="#" onclick="openChatGPTWithPrompt(prompt4)">Day 4</a>
+                    <a href="#" onclick="openChatGPTWithPrompt(prompt5)">Day 5</a>
+                </div>
             </div>
         </div>
     </section>
