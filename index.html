@@ -210,23 +210,27 @@
             'week3Day5': []
         };
 
-        function openWeekDetailed(day) {
-            const menuHelper = document.getElementById('dynamic-menu')
-            menuHelper.innterHTML = '';
+
+
+      // Subpage
+        function openDetailedWeek(day) {
+            const menuContainer = document.getElementById('dynamic-menu');
+            menuContainer.innerHTML = ''; // Clear previous content
+
             if (menus[day]) {
-                menus[day].forEach(prompt >=
-                    {
-                        const button = document.createElement('button');
-                        button.textContent = prompt;
-                        botton.onclick = () => openChatGPTWithPrompt(prompt)
-                        menuHelper.appendChild(button)
-                    });
-                menuHelper.classLit.remove('hidden')
+                menus[day].forEach(prompt =>
+                {
+                    const button = document.createElement('button');
+                    button.textContent = prompt;
+                    button.onclick = () => openChatGPTWithPrompt(prompt);
+                    menuContainer.appendChild(button);
+                });
+                menuContainer.classList.remove('hidden');
             }
             else
-                {
-                menuHelper.classList.add('hidden')
-                }
+            {
+                menuContainer.classList.add('hidden');
+            }
         }
     </script>
 
