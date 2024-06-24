@@ -1,243 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang = "en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <title>JunGPT Prompt Selector</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel = "stylesheet" href = "style.css">
 </head>
 <body>
     <nav>
-        <div class="logo">
-            <img src="./cchc.jfif" alt="logo" class="nav-logo">
+        <div class = "logo">
+            <img src = "./cchc.jfif" alt = "logo" class = "nav-logo">
             Cobbs Creek Healthcare
         </div>
-        <div class="nav-items">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="mailto:cchc@cchc.com">Contact</a>
+        <div class = "nav-items">
+            <a href = "index.html">Home</a>
+            <a href = "about.html">About</a>
+            <a href = "mailto:cchc@cchc.com">Contact</a>
         </div>
     </nav>
-    <section class="hero">
-        <div class="hero-container">
-            <div class="column-left">
+    <section class = "hero">
+        <div class = "hero-container">
+            <div class = "column-left">
                 <h1>JunGPT Prompts for CCHC use</h1>
                 <p>Choose a topic to get started!</p>
-                <div class="dropdown">
-                    <label for="chatgpt-version">Select ChatGPT Version:</label>
-                    <select id="chatgpt-version">
-                        <option value="gpt-3.5">GPT-3.5</option>
-                        <option value="gpt-4.0">GPT-4.0</option>
-                        <option value="gpt-4o">GPT-4o</option>
+                <div class = "dropdown">
+                    <label for = "chatgpt-version">Select ChatGPT Version:</label>
+                    <select id = "chatgpt-version">
+                        <option value = "text-davinci-002-render-sha">GPT-3.5</option>
+                        <option value = "gpt-4">GPT-4.0</option>
+                        <option value = "gpt-4o">GPT-4o</option>
                     </select>
                 </div>
-                <div class="button-container">
-                    <div class="column">
+                <div class = "button-container">
+                    <div class = "column">
                         <h2>Week 1</h2>
-                        <button onclick="openDetailedWeek('week1Day1')">Day 1</button>
-                        <button onclick="openDetailedWeek('week1Day2')">Day 2</button>
-                        <button onclick="openDetailedWeek('week1Day3')">Day 3</button>
-                        <button onclick="openDetailedWeek('week1Day4')">Day 4</button>
-                        <button onclick="openDetailedWeek('week1Day5')">Day 5</button>
+                        <button onclick = "openDetailedWeek('week1Day1')">Day 1</button>
+                        <button onclick = "openDetailedWeek('week1Day2')">Day 2</button>
+                        <button onclick = "openDetailedWeek('week1Day3')">Day 3</button>
+                        <button onclick = "openDetailedWeek('week1Day4')">Day 4</button>
+                        <button onclick = "openDetailedWeek('week1Day5')">Day 5</button>
                     </div>
-                    <div class="column">
+                    <div class = "column">
                         <h2>Week 2</h2>
-
-                        <button onclick="openDetailedWeek('week2Day1')">Day 1</button>
-                        <button onclick="openDetailedWeek('week2Day2')">Day 2</button>
-                        <button onclick="openDetailedWeek('week2Day3')">Day 3</button>
-                        <button onclick="openDetailedWeek('week2Day4')">Day 4</button>
-                        <button onclick="openDetailedWeek('week2Day5')">Day 5</button>
+                        <button onclick = "openDetailedWeek('week2Day1')">Day 1</button>
+                        <button onclick = "openDetailedWeek('week2Day2')">Day 2</button>
+                        <button onclick = "openDetailedWeek('week2Day3')">Day 3</button>
+                        <button onclick = "openDetailedWeek('week2Day4')">Day 4</button>
+                        <button onclick = "openDetailedWeek('week2Day5')">Day 5</button>
                     </div>
-                    <div class="column">
+                    <div class = "column">
                         <h2>Week 3</h2>
-                        <button onclick="openDetailedWeek('week3Day1')">Day 1</button>
-                        <button onclick="openDetailedWeek('week3Day2')">Day 2</button>
-                        <button onclick="openDetailedWeek('week3Day3')">Day 3</button>
-                        <button onclick="openDetailedWeek('week3Day4')">Day 4</button>
-                        <button onclick="openDetailedWeek('week3Day5')">Day 5</button>
+                        <button onclick = "openDetailedWeek('week3Day1')">Day 1</button>
+                        <button onclick = "openDetailedWeek('week3Day2')">Day 2</button>
+                        <button onclick = "openDetailedWeek('week3Day3')">Day 3</button>
+                        <button onclick = "openDetailedWeek('week3Day4')">Day 4</button>
+                        <button onclick = "openDetailedWeek('week3Day5')">Day 5</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <script>
-        // Define multiple prompts with short messages for testing
-        // The stuff in quotes is what will be inputted into a new chat GPT chat
+    <!-- Container for dynamic menu -->
+    <section id = "dynamic-menu-container" class = "hidden">
+        <div id = "dynamic-menu"></div>
+    </section>
 
-        const prompt1 = `Prompt 1`;
-        const prompt2 = `Prompt 2`;
-        const prompt3 = `Prompt 3`;
-        const prompt4 = `Prompt 4`;
-        const prompt5 = `Prompt 5`;
-        const prompt6 = `Prompt 6`;
-        const prompt7 = `Prompt 7`;
-        const prompt8 = `Prompt 8`;
-        const prompt9 = `Prompt 9`;
-        const prompt10 = `Prompt 10`;
-        const prompt11 = `Prompt 11`;
-        const prompt12 = `Prompt 12`;
-        const prompt13 = `Prompt 13`;
-        const prompt14 = `Prompt 14`;
-        const prompt15 = `Prompt 15`;
-
-        // Function to open ChatGPT and pre-fill the selected prompt
-        function openChatGPTWithPrompt(prompt) {
-            const version = document.getElementById('chatgpt-version').value;
-            const encodedPrompt = encodeURIComponent(prompt);
-            const chatGPTURL = `https://chat.openai.com/?model=${version}&q=${encodedPrompt}`;
-            window.open(chatGPTURL, '_blank');
-        }
-
-        // Opens the new week UI, used before openChatGptWithPrompt
-         const menus = {
-            'week1Day1': [
-                'the gpt prompt in question 1-1',
-                'the gpt prompt in question 1-2',
-                'the gpt prompt in question 1-3',
-                'the gpt prompt in question 1-4',
-                'the gpt prompt in question 1-5',
-                'the gpt prompt in question 1-6',
-                'the gpt prompt in question 1-7',
-                'the gpt prompt in question 1-8',
-                'the gpt prompt in question 1-9'
-            ],
-            'week1Day2': [
-                'the gpt prompt in question 2-1',
-                'the gpt prompt in question 2-2',
-                'the gpt prompt in question 2-3',
-                'the gpt prompt in question 2-4',
-                'the gpt prompt in question 2-5',
-                'the gpt prompt in question 2-6'
-            ],
-            'week1Day3': [
-                'the gpt prompt in question 3-1',
-                'the gpt prompt in question 3-2',
-                'the gpt prompt in question 3-3',
-                'the gpt prompt in question 3-4',
-                'the gpt prompt in question 3-5',
-                'the gpt prompt in question 3-6',
-                'the gpt prompt in question 3-7',
-                'the gpt prompt in question 3-8'
-            ],
-            'week1Day4': [
-                'the gpt prompt in question 4-1',
-                'the gpt prompt in question 4-2',
-                'the gpt prompt in question 4-3',
-                'the gpt prompt in question 4-4',
-                'the gpt prompt in question 4-5',
-                'the gpt prompt in question 4-6',
-                'the gpt prompt in question 4-7',
-                'the gpt prompt in question 4-8',
-                'the gpt prompt in question 4-9',
-                'the gpt prompt in question 4-10',
-                'the gpt prompt in question 4-11',
-                'the gpt prompt in question 4-12'
-            ],
-            'week1Day5': [
-                'the gpt prompt in question 5-1',
-                'the gpt prompt in question 5-2',
-                'the gpt prompt in question 5-3',
-                'the gpt prompt in question 5-4',
-                'the gpt prompt in question 5-5',
-                'the gpt prompt in question 5-6',
-                'the gpt prompt in question 5-7',
-                'the gpt prompt in question 5-8',
-                'the gpt prompt in question 5-9',
-                'the gpt prompt in question 5-10',
-                'the gpt prompt in question 5-11',
-                'the gpt prompt in question 5-12'
-            ],
-            'week2Day1': [
-                'the gpt prompt in question 6-1',
-                'the gpt prompt in question 6-2',
-                'the gpt prompt in question 6-3'
-            ],
-            'week2Day2': [
-                'the gpt prompt in question 7-1',
-                'the gpt prompt in question 7-2',
-                'the gpt prompt in question 7-3',
-                'the gpt prompt in question 7-4',
-                'the gpt prompt in question 7-5',
-                'the gpt prompt in question 7-6',
-                'the gpt prompt in question 7-7'
-            ],
-            'week2Day3': [
-                'the gpt prompt in question 8-1',
-                'the gpt prompt in question 8-2',
-                'the gpt prompt in question 8-3',
-                'the gpt prompt in question 8-4',
-                'the gpt prompt in question 8-5',
-                'the gpt prompt in question 8-6',
-                'the gpt prompt in question 8-7'
-            ],
-            'week2Day4': [
-                'the gpt prompt in question 9-1',
-                'the gpt prompt in question 9-2',
-                'the gpt prompt in question 9-3'
-            ],
-            'week2Day5': [
-                'the gpt prompt in question 10-1'
-            ],
-            'week3Day1': [
-                'the gpt prompt in question 11-1',
-                'the gpt prompt in question 11-2',
-                'the gpt prompt in question 11-3'
-            ],
-            'week3Day2': [
-                'the gpt prompt in question 12-1',
-                'the gpt prompt in question 12-2',
-                'the gpt prompt in question 12-3',
-                'the gpt prompt in question 12-4',
-                'the gpt prompt in question 12-5'
-            ],
-            'week3Day3': [
-                'the gpt prompt in question 13-1',
-                'the gpt prompt in question 13-2',
-                'the gpt prompt in question 13-3',
-                'the gpt prompt in question 13-4'
-            ],
-            'week3Day4': [
-                'the gpt prompt in question 14-1',
-                'the gpt prompt in question 14-2',
-                'the gpt prompt in question 14-3',
-                'the gpt prompt in question 14-4',
-                'the gpt prompt in question 14-5',
-                'the gpt prompt in question 14-6',
-                'the gpt prompt in question 14-7'
-            ],
-            'week3Day5': []
-        };
-
-
-
-      // Subpage
-        function openDetailedWeek(day) {
-            const menuContainer = document.getElementById('dynamic-menu');
-            menuContainer.innerHTML = ''; // Clear previous content
-
-            if (menus[day]) {
-                menus[day].forEach(prompt =>
-                {
-                    const button = document.createElement('button');
-                    button.textContent = prompt;
-                    button.onclick = () => openChatGPTWithPrompt(prompt);
-                    menuContainer.appendChild(button);
-                });
-                menuContainer.classList.remove('hidden');
-            }
-            else
-            {
-                menuContainer.classList.add('hidden');
-            }
-        }
-    </script>
-
-    <style>
-        .hidden {
-            display: none;
-        }
-    </style>
+    <!-- Include the external JavaScript file -->
+    <script src = "dynamicMenu.js"></script>
 </body>
 </html>
