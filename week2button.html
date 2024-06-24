@@ -19,7 +19,7 @@
         </div>
         <div class="dropdown">
             <label for="chatgpt-version">Select ChatGPT Version:</label>
-            <select id="chatgpt-version">
+            <select id="chatgpt-version" class="dropdown-glow">
                 <option value="text-davinci-002-render-sha">GPT-3.5</option>
                 <option value="gpt-4.0">GPT-4.0</option>
             </select>
@@ -34,7 +34,7 @@
                 <div class="button-container">
                     <button onclick="toggleDropdown('day1-dropdown')">Day 1</button>
                     <div id="day1-dropdown" class="dropdown-content">
-                        <select id="prompt-selector-day1">
+                        <select id="prompt-selector-day1" class="dropdown-glow">
                             <option value="Prompt 1 for Day 1">Prompt 1</option>
                             <option value="Prompt 2 for Day 1">Prompt 2</option>
                             <option value="Prompt 3 for Day 1">Prompt 3</option>
@@ -52,7 +52,7 @@
 
                     <button onclick="toggleDropdown('day2-dropdown')">Day 2</button>
                     <div id="day2-dropdown" class="dropdown-content">
-                        <select id="prompt-selector-day2">
+                        <select id="prompt-selector-day2" class="dropdown-glow">
                             <option value="Prompt 1 for Day 2">Prompt 1</option>
                             <option value="Prompt 2 for Day 2">Prompt 2</option>
                             <option value="Prompt 3 for Day 2">Prompt 3</option>
@@ -70,7 +70,7 @@
 
                     <button onclick="toggleDropdown('day3-dropdown')">Day 3</button>
                     <div id="day3-dropdown" class="dropdown-content">
-                        <select id="prompt-selector-day3">
+                        <select id="prompt-selector-day3" class="dropdown-glow">
                             <option value="Prompt 1 for Day 3">Prompt 1</option>
                             <option value="Prompt 2 for Day 3">Prompt 2</option>
                             <option value="Prompt 3 for Day 3">Prompt 3</option>
@@ -88,7 +88,7 @@
 
                     <button onclick="toggleDropdown('day4-dropdown')">Day 4</button>
                     <div id="day4-dropdown" class="dropdown-content">
-                        <select id="prompt-selector-day4">
+                        <select id="prompt-selector-day4" class="dropdown-glow">
                             <option value="Prompt 1 for Day 4">Prompt 1</option>
                             <option value="Prompt 2 for Day 4">Prompt 2</option>
                             <option value="Prompt 3 for Day 4">Prompt 3</option>
@@ -106,7 +106,7 @@
 
                     <button onclick="toggleDropdown('day5-dropdown')">Day 5</button>
                     <div id="day5-dropdown" class="dropdown-content">
-                        <select id="prompt-selector-day5">
+                        <select id="prompt-selector-day5" class="dropdown-glow">
                             <option value="Prompt 1 for Day 5">Prompt 1</option>
                             <option value="Prompt 2 for Day 5">Prompt 2</option>
                             <option value="Prompt 3 for Day 5">Prompt 3</option>
@@ -129,7 +129,13 @@
     <script>
         function toggleDropdown(dropdownId) {
             const dropdown = document.getElementById(dropdownId);
-            dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+            if (dropdown.style.display === 'none' || !dropdown.classList.contains('show')) {
+                dropdown.style.display = 'block';
+                setTimeout(() => dropdown.classList.add('show'), 10); // Add a small delay to ensure the transition works
+            } else {
+                dropdown.classList.remove('show');
+                setTimeout(() => dropdown.style.display = 'none', 500); // Wait for the transition to end before hiding
+            }
         }
 
         function openChatGPTWithPrompt(selectorId) {
