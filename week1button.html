@@ -45,7 +45,9 @@
                             <option value="Prompt 8 for Day 1">Prompt 8</option>
                             <option value="Prompt 9 for Day 1">Prompt 9</option>
                         </select>
-                        <button onclick="openChatGPTWithPrompt('prompt-selector-day1')">Open in ChatGPT</button>
+                        <button onclick="selectPreviousPrompt('prompt-selector-day1')">Previous</button>
+                        <button onclick="selectNextPrompt('prompt-selector-day1')">Next</button>
+                        <button class="button-85" onclick="openChatGPTWithPrompt('prompt-selector-day1')">Open in ChatGPT</button>
                     </div>
 
                     <button onclick="toggleDropdown('day2-dropdown')">Day 2</button>
@@ -61,7 +63,9 @@
                             <option value="Prompt 8 for Day 2">Prompt 8</option>
                             <option value="Prompt 9 for Day 2">Prompt 9</option>
                         </select>
-                        <button onclick="openChatGPTWithPrompt('prompt-selector-day2')">Open in ChatGPT</button>
+                        <button onclick="selectPreviousPrompt('prompt-selector-day2')">Previous</button>
+                        <button onclick="selectNextPrompt('prompt-selector-day2')">Next</button>
+                        <button class="button-85" onclick="openChatGPTWithPrompt('prompt-selector-day2')">Open in ChatGPT</button>
                     </div>
 
                     <button onclick="toggleDropdown('day3-dropdown')">Day 3</button>
@@ -77,7 +81,9 @@
                             <option value="Prompt 8 for Day 3">Prompt 8</option>
                             <option value="Prompt 9 for Day 3">Prompt 9</option>
                         </select>
-                        <button onclick="openChatGPTWithPrompt('prompt-selector-day3')">Open in ChatGPT</button>
+                        <button onclick="selectPreviousPrompt('prompt-selector-day3')">Previous</button>
+                        <button onclick="selectNextPrompt('prompt-selector-day3')">Next</button>
+                        <button class="button-85" onclick="openChatGPTWithPrompt('prompt-selector-day3')">Open in ChatGPT</button>
                     </div>
 
                     <button onclick="toggleDropdown('day4-dropdown')">Day 4</button>
@@ -93,7 +99,9 @@
                             <option value="Prompt 8 for Day 4">Prompt 8</option>
                             <option value="Prompt 9 for Day 4">Prompt 9</option>
                         </select>
-                        <button onclick="openChatGPTWithPrompt('prompt-selector-day4')">Open in ChatGPT</button>
+                        <button onclick="selectPreviousPrompt('prompt-selector-day4')">Previous</button>
+                        <button onclick="selectNextPrompt('prompt-selector-day4')">Next</button>
+                        <button class="button-85" onclick="openChatGPTWithPrompt('prompt-selector-day4')">Open in ChatGPT</button>
                     </div>
 
                     <button onclick="toggleDropdown('day5-dropdown')">Day 5</button>
@@ -109,7 +117,9 @@
                             <option value="Prompt 8 for Day 5">Prompt 8</option>
                             <option value="Prompt 9 for Day 5">Prompt 9</option>
                         </select>
-                        <button onclick="openChatGPTWithPrompt('prompt-selector-day5')">Open in ChatGPT</button>
+                        <button onclick="selectPreviousPrompt('prompt-selector-day5')">Previous</button>
+                        <button onclick="selectNextPrompt('prompt-selector-day5')">Next</button>
+                        <button class="button-85" onclick="openChatGPTWithPrompt('prompt-selector-day5')">Open in ChatGPT</button>
                     </div>
                 </div>
             </div>
@@ -128,6 +138,20 @@
             const encodedPrompt = encodeURIComponent(prompt);
             const chatGPTURL = `https://chat.openai.com/?model=${version}&q=${encodedPrompt}`;
             window.open(chatGPTURL, '_blank');
+        }
+
+        function selectNextPrompt(selectorId) {
+            const selector = document.getElementById(selectorId);
+            if (selector.selectedIndex < selector.options.length - 1) {
+                selector.selectedIndex += 1;
+            }
+        }
+
+        function selectPreviousPrompt(selectorId) {
+            const selector = document.getElementById(selectorId);
+            if (selector.selectedIndex > 0) {
+                selector.selectedIndex -= 1;
+            }
         }
 
         document.addEventListener('DOMContentLoaded', () => {
