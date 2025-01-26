@@ -7,6 +7,7 @@
 Automatically redirect to ChatGPT, Gemini, or Copilot with pre-filled prompts.
 
 </div>
+
 ✨ Features
 
 🔄 Direct redirection to AI assistants
