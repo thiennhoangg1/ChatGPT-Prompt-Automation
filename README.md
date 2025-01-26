@@ -9,10 +9,10 @@ Automatically redirect to ChatGPT, Gemini, or Copilot with pre-filled prompts.
 </div>
 ✨ Features
 
-🔄 Direct redirection to AI chatbots
+🔄 Direct redirection to AI assistants
 📝 Pre-filled custom prompts
 📅 Weekly topic organization
-🛠️ Customizable prompts and topics via JSON file
+🛠️ Customizable via JSON
 
 
 🚀 Quick Start
