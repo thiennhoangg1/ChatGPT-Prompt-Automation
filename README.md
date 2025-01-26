@@ -13,12 +13,12 @@ Automatically redirect to ChatGPT, Gemini, or Copilot with pre-filled prompts.
 - 🔄 Direct redirection to AI assistants
 - 📝 Pre-filled custom prompts
 - 📅 Weekly topic organization
-- 🛠️ Customizable via JSON
+- 🛠️ Customizable via JSON file
 
 
-## 🚀 Setup
+## 🚀 Usage
 
 1. Select week/topic
-2. Choose AI assistant (ChatGPT/Gemini/Copilot)
+2. Choose AI bot (ChatGPT/Gemini/Copilot)
 3. Auto-redirects with prompt
 4. Edit JSON for custom prompts
